@@ -5,10 +5,9 @@ import java.util.Objects;
 
 public class PatientDiaryConfig implements Serializable, Cloneable {
 
-	private static final long serialVersionUID = -1997433636517306892L;
+	private static final long serialVersionUID = 9020437984638539380L;
 
 	private String url;
-	private String externalDataUrl;
 	private String probandsUrl;
 	private String authUrl;
 	private String email;
@@ -20,14 +19,6 @@ public class PatientDiaryConfig implements Serializable, Cloneable {
 
 	public void setUrl(String url) {
 		this.url = url;
-	}
-
-	public String getExternalDataUrl() {
-		return externalDataUrl;
-	}
-
-	public void setExternalDataUrl(String externalDataUrl) {
-		this.externalDataUrl = externalDataUrl;
 	}
 
 	public String getProbandsUrl() {
@@ -70,7 +61,7 @@ public class PatientDiaryConfig implements Serializable, Cloneable {
 			return false;
 		PatientDiaryConfig that = (PatientDiaryConfig) o;
 		return Objects.equals(url, that.url)
-			&& Objects.equals(externalDataUrl, that.externalDataUrl)
+			&& Objects.equals(probandsUrl, that.probandsUrl)
 			&& Objects.equals(authUrl, that.authUrl)
 			&& Objects.equals(email, that.email)
 			&& Objects.equals(password, that.password);
@@ -78,7 +69,7 @@ public class PatientDiaryConfig implements Serializable, Cloneable {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(url, externalDataUrl, authUrl, email, password);
+		return Objects.hash(url, probandsUrl, authUrl, email, password);
 	}
 
 	@Override
